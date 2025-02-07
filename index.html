@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franziska</title>
+    <style>
+        body {
+            background-color: rgb(227, 227, 202);
+            color: #535c53;
+            font-family: monospace;
+            white-space: pre-line;
+            margin: 20px;
+            max-width: 80ch;
+        }
+        .terminal {
+            padding: 20px;
+        }
+        h1, h2,h4, p {
+        margin: 0;
+        } 
+        a {
+            color: #7a6977;
+            text-decoration: underline;
+        }
+        .blink::after {
+            content: "_";
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1><div class="terminal" id="name"></div></h1>
+        <script>
+            const text = "Franziska Hoerbst"
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    document.getElementById("name").innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 25);
+                } else {
+                    document.getElementById("name").innerHTML += '<span class="blink"></span>';
+                }
+            }
+            
+            window.onload = typeWriter;
+    </script>
+    <div class="terminal">
+        <p>
+            currently: 
+            previously: 
+
+        </p>
+            <h2>> about me </h2>
+        <p>
+            helu
+        </p>
+        <h2>> how to reach me?</h2>
+        <p>
+            email: <a href="mailto:franziska@hoerbst.net">franziska@hoerbst.net</a>
+            github: <a href="https://github.com/franziskaaah">github.com/franziskaaah</a>
+
+        </p>
+        <h2>> what can i do?</h2>
+        <p>
+      
+        </p>
+        <h2>> select projects</h2>
+        <p>
+
+            - a bayesian framework for differential gene expression. i collaborated with a team of researchers to develop a bayesian framework for ranking genes based on their statistical evidence for differential expression. i contributed to the development of the framework, the testing of method with available r packages (see <a href="https://github.com/Morris-Research-Group/bayexpress">github</a>) and the writing of the manuscript.
+
+            for full list, see my <a href="cv.pdf">cv</a>.
+
+        <h2>> select publications</h2>
+        <p>
+            - Hoerbst F, <strong>Sidhu GS</strong>, Tomkins M, Morris RJ. What is a differentially expressed gene? bioRxiv. 2025. doi: <a href="https://doi.org/10.1101/2025.01.31.635902">10.1101/2025.01.31.635902</a>
+            
+            - Hoerbst F, <strong>Sidhu GS</strong>, Omori T, Tomkins M, Morris RJ. A Bayesian framework for ranking genes based on their statistical evidence for differential expression. bioRxiv. 2025. doi: <a href = "https://doi.org/10.1101/2025.01.20.633909">10.1101/2025.01.20.633909</a>
+
+            for the full list, see my <a href="https://orcid.org/0009-0002-7905-8055">orcid</a> or my <a href="cv.pdf">cv</a>.
+        </p>
+    </div>
+</body>
+</html>
